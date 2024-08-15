@@ -20,7 +20,6 @@ export default function Calendar(props) {
 
     const numericMonth = monthsArr.indexOf(selectedMonth)
     const data = completeData?.[selectedYear]?.[numericMonth] || {}
-    console.log('THIS MONTHS DATA: ', completeData?.[selectedYear]?.[selectedMonth])
 
     function handleIncrementMonth(val) {
         // value +1 -1
@@ -38,11 +37,6 @@ export default function Calendar(props) {
         }
     }
 
-
-
-    console.log('SELECTED MONTH: ', selectedMonth)
-    // const year = 2024
-    // const month = 'July'
     const monthNow = new Date(selectedYear, Object.keys(months).indexOf(selectedMonth), 1)
     const firstDayOfMonth = monthNow.getDay()
     const daysInMonth = new Date(selectedYear, Object.keys(selectedMonth).indexOf(selectedMonth) + 1, 0).getDate()
